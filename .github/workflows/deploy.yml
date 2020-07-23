@@ -14,10 +14,10 @@ jobs:
         uses: geertvdc/setup-hub@v1.0.0
 
       # dev ブランチをチェックアウトする
-      - name: checkout dev
+      - name: checkout develop
         uses: actions/checkout@v2
         with:
-          ref: dev
+          ref: develop
 
       # プルリクを作成する
       - name: Create Pull Request
