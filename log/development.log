@@ -61,3 +61,11 @@ Processing by StaticPagesController#home as HTML
 Completed 200 OK in 10ms (Views: 9.8ms | ActiveRecord: 0.0ms | Allocations: 5035)
 
 
+Started GET "/" for ::1 at 2020-07-23 15:32:22 +0900
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 1.9ms | Allocations: 205)
+Completed 200 OK in 2773ms (Views: 2763.8ms | ActiveRecord: 0.0ms | Allocations: 1411743)
+
+
