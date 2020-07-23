@@ -25,6 +25,6 @@ jobs:
           TZ: 'Asia/Tokyo'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          DATE=`date +"%Y%m%d"`
+          DATE=`date +"%Y%m%d_%H:%m:%s"`
           PULL_REQUEST_NAME="release_$DATE"
-          hub pull-request -m "$PULL_REQUEST_NAME" -b master -h develop -l "PR:draft" -r "$REVIEWERS"
+          hub pull-request -m "$PULL_REQUEST_NAME" -b master -h develop
