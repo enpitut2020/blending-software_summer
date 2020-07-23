@@ -14,8 +14,8 @@
 - [masaya-YAMADA](https://github.com/masaya-YAMADA)
 
 
-## URL
-現在，進行中です！
+## 公開先
+[Heroku](https://youtuber-search.herokuapp.com/)
 
 ## 今，何ができるの？
 <!-- - サービスのトップページを開くことができます！ -->
