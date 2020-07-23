@@ -1,8 +1,8 @@
-name: create branch & pull request
+name: deploy
 
 on:
   push:
-    branches: [ dev ]
+    branches: [ develop ]
 
 jobs:
   build:
@@ -19,24 +19,12 @@ jobs:
         with:
           ref: dev
 
-      # ブランチを作成する
-      - name: Create Branch
-        id: create_branch
+      # プルリクを作成する
+      - name: Create Pull Request
         env:
           TZ: 'Asia/Tokyo'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           DATE=`date +"%Y%m%d"`
-          BRANCH_NAME="release_$DATE"
-          git checkout -b "$BRANCH_NAME"
-          git push origin "$BRANCH_NAME"
-          echo ::set-output name=branch_name::$BRANCH_NAME
-
-      # プルリクを作成する
-      - name: Create Pull Request
-        env:
-          REVIEWERS: "rito328"
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH_NAME: ${{ steps.create_branch.outputs.branch_name }}
-        run: |
-          hub pull-request -m "Github Actions からプルリクを出す" -b master -h $BRANCH_NAME -l "PR:draft" -r "$REVIEWERS"
+          PULL_REQUEST_NAME="release_$DATE"
+          hub pull-request -m "$PULL_REQUEST_NAME" -b master -h develop -l "PR:draft" -r "$REVIEWERS"
