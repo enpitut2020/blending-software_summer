@@ -69,3 +69,10 @@ Processing by StaticPagesController#home as HTML
 Completed 200 OK in 2773ms (Views: 2763.8ms | ActiveRecord: 0.0ms | Allocations: 1411743)
 
 
+Started GET "/" for ::1 at 2020-07-23 15:35:18 +0900
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 18ms (Views: 17.1ms | ActiveRecord: 0.0ms | Allocations: 5116)
+
+
