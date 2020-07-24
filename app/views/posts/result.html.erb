@@ -1,0 +1,32 @@
+<h2>今人気のyoutuber::<%= @input %>のコラボチャンネル</h2>
+<!-- <h3>コラボチャンネル</h3>
+<p>ユーチューバー草彅チャンネル</p>
+<p>パオパオチャンネル</p>
+<p>はじめしゃちょー(hajime)</p>
+<p>桐崎栄二. きりざきえいじ</p>
+<p>Fischer's-フィッシャーズ-</p>
+
+
+<%= @return.inspect %>
+-->
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">チャンネルID</th>
+      <th scope="col">チャンネル名</th>
+      <th scope="col">チャンネルへのリンク</th>
+  </thead>
+  <tbody>
+    <% @return.each do |k,v| %>
+      <tr>
+        <th scope="row"><%= k %></th>
+        <td><%= v["channel_name"] %></td>
+        <td><%= link_to "here", v["home_url"] %></td>
+      </tr>
+    <% end %>
+  <br>
+  <%= link_to "トップページ", root_path %>
+  </tbody>
+</table>
+
+

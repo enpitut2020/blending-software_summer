@@ -1,0 +1,10 @@
+<h1>Youtuber-Search</h1>
+<h3>アプリ概要</h3>
+<p>YouTubeのチャンネル名を検索するとそれに類似したチャンネルを表示します．<p>
+<div id="input-search">
+  <%= form_with(url: posts_search_path, method: :get, local: true) do |f| %>
+    <%= f.text_field :search %>
+    <%= f.submit "search" %>
+  <% end %>
+</div>
+
