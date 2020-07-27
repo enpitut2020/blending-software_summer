@@ -15,4 +15,11 @@ class PostsController < ApplicationController
     # responseのbody要素をJSON形式で解釈し、hashに変換
     @return = JSON.parse(res.body)
   end
+
+  def details
+    id = params[:id]
+    id[1] = 'U'
+    @youtube = "https://www.youtube.com/embed/?list=" + params[:id]
+  end
+  
 end

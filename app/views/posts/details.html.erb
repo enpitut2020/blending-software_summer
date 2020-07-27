@@ -1,0 +1,24 @@
+<h1>details page</h1>
+
+<p>最新動画</p>
+<iframe width="450" height="250" src=<%= @youtube %> frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p>登録人数</p>
+
+<p>Twitter</p>
+<a class="twitter-timeline" data-width="220" data-height="400" data-theme="light" href="https://twitter.com/Otojya?ref_src=twsrc%5Etfw">Tweets by Otojya</a>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>Twitch</p>
+<!-- Add a placeholder for the Twitch embed -->
+<div id="twitch-embed"></div>
+<!-- Load the Twitch embed script -->
+<script src="https://player.twitch.tv/js/embed/v1.js"></script>
+<!-- Create a Twitch.Player object. This will render within the placeholder div -->
+<script type="text/javascript">
+  new Twitch.Player("twitch-embed", {
+    channel: "go_tsukishima"
+  });
+</script>
+
+<p>ニコニコ</p>

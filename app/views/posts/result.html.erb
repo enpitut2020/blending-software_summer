@@ -16,7 +16,7 @@
         <td><%= image_tag channel["thumbnail_url"], :alt => channel["channel_name"]+'のサムネイル画像' %></td>
         <td><%= channel["channel_name"] %></td>
         <td><%= link_to "here", channel["home_url"] %></td>
-        <td><%= link_to "詳細", channel["home_url"] %></td>
+        <td><%= link_to "詳細", posts_details_path(id:k) %></td>
       </tr>
     <% end %>
   <br>
