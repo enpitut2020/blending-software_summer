@@ -1,13 +1,77 @@
-<h1>Youtuber-Search</h1>
-<h3>アプリ概要</h3>
-<p>YouTubeのチャンネル名を検索するとそれに類似したチャンネルを表示します．<p>
+<style>
+  .colorful span:nth-child(9) {
+    color: #999999;
+  }
+
+  .colorful span:nth-child(10) {
+    color: #4285F4;
+  }
+
+  .colorful span:nth-child(11) {
+    color: #EA4335;
+  }
+
+  .colorful span:nth-child(12) {
+    color: #FBBC05;
+  }
+
+  .colorful span:nth-child(13) {
+    color: #4285F4;
+  }
+
+  .colorful span:nth-child(14) {
+    color: #34A853;
+  }
+
+  .colorful span:nth-child(15) {
+    color: #EA4335;
+  }
+
+  h1 {
+    font-size: 3.5em;
+    letter-spacing: -2px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  div {
+    text-align: center;
+  }
+
+  body {
+    padding-top: 180px;
+  }
+</style>
+
+<h1 class="colorful">
+  YouTuber-Search
+  </h1>
+
 <div id="input-search">
   <%= form_with(url: posts_search_path, method: :get, local: true) do |f| %>
-    <%= f.text_field :search %>
-    <%= f.submit "search" %>
-  <% end %>
-  <% flash.each do |key,value| %>
-    <p class="text-danger"> <%= value %> </p>
+      <%= f.text_field :search, size: "55:10" %><br><br>
+    <%= f.submit " Search ", class: "btn  btn-outline-secondary mb-2" %>
+    &ensp;
+    <%= f.submit " I'm Feeling Lucky", class: "btn  btn-outline-secondary mb-2" %>
+    <% end %>
+
+  <!--<h3>アプリ概要</h3>-->
+  <!--<p>YouTubeのチャンネル名を検索するとそれに類似したチャンネルを表示します．-->
+  <!--<p>-->
+
+
+  <% flash.each do |key, value| %>
+  <p class="text-danger"> <%= value %> </p>
   <% end %>
 </div>
+
+<script src="https://code.jquery.com/jquery-1.12.4.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(".colorful").children().addBack().contents().each(function () {
+        if (this.nodeType == 3) {
+            var $this = $(this);
+            $this.replaceWith($this.text().replace(/(\S)/g, "<span>$&</span>"));
+        }
+    });
+</script>
 
