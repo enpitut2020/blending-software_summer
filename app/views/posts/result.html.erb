@@ -6,7 +6,6 @@
       <!-- <th scope="col">おすすめ順</th> -->
       <th scope="col"></th>
       <th scope="col">チャンネル名</th>
-      <th scope="col">チャンネルへのリンク</th>
       <th scope="col">チャンネル詳細</th>
       <th scope="col">このチャンネルで再検索</th>
   </thead>
@@ -15,7 +14,6 @@
       <tr>
         <!-- <td scope="row"><%= index+1 %></td> -->
         <td><%= image_tag channel["thumbnail_url"], :alt => channel["channel_name"]+'のサムネイル画像' %></td>
-        <td><%= channel["channel_name"] %></td>
         <td><%= link_to channel["channel_name"], channel["home_url"] %></td>
         <td><%= link_to "詳細", posts_details_path(id:channel["channel_id"]) %></td>
         <td>
