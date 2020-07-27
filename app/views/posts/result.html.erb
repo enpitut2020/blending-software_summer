@@ -22,7 +22,7 @@
         <th scope="row"><%= k %></th>
         <td><%= v["channel_name"] %></td>
         <td><%= link_to "here", v["home_url"] %></td>
-        <td><%= link_to "詳細", posts_details_path %></td>
+        <td><%= link_to "詳細", posts_details_path(id:k) %></td>
       </tr>
     <% end %>
   <br>

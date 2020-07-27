@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   def result
     @input = params[:search]
     @return = JSON.parse('{
-      "97361d18": {
+      "UCFkncXKwLRtA2MFdXOv34yQ": {
         "channel_name": "兄者弟者",
         "home_url": "https://www.youtube.com/user/norunine/videos",
         "thumbnail_url": "aaa@@@",
@@ -43,6 +43,9 @@ class PostsController < ApplicationController
   end
 
   def details
+    id = params[:id]
+    id[1] = 'U'
+    @youtube = "https://www.youtube.com/embed/?list=" + params[:id]
   end
   
 end
