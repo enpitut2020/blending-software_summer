@@ -41,4 +41,8 @@ class PostsController < ApplicationController
       }
     }')
   end
+
+  def details
+  end
+  
 end
