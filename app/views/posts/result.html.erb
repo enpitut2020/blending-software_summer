@@ -8,6 +8,7 @@
       <th scope="col">チャンネル名</th>
       <th scope="col">チャンネルへのリンク</th>
       <th scope="col">チャンネル詳細</th>
+      <th scope="col">このチャンネルで再検索</th>
   </thead>
   <tbody>
     <% @return["ans"].each_with_index do |channel, index| %>
@@ -17,6 +18,12 @@
         <td><%= channel["channel_name"] %></td>
         <td><%= link_to "here", channel["home_url"] %></td>
         <td><%= link_to "詳細", posts_details_path(id:channel["channel_id"]) %></td>
+        <td>
+        <%= form_tag(posts_search_path, method: "get") do %>
+          <%= hidden_field_tag(:search, channel["channel_name"]) %>
+          <%= submit_tag("Search") %>
+        <% end %>
+        </td>
       </tr>
     <% end %>
   <br>
