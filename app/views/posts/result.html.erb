@@ -1,7 +1,7 @@
 <h2>今人気のyoutuber::<%= @input %>のコラボチャンネル</h2>
 
-<table class="table">
-  <thead>
+<table class="table table-striped">
+  <thead class="thead-dark">
     <tr>
       <!-- <th scope="col">おすすめ順</th> -->
       <th scope="col"></th>
@@ -16,12 +16,12 @@
         <!-- <td scope="row"><%= index+1 %></td> -->
         <td><%= image_tag channel["thumbnail_url"], :alt => channel["channel_name"]+'のサムネイル画像' %></td>
         <td><%= channel["channel_name"] %></td>
-        <td><%= link_to "here", channel["home_url"] %></td>
+        <td><%= link_to channel["channel_name"], channel["home_url"] %></td>
         <td><%= link_to "詳細", posts_details_path(id:channel["channel_id"]) %></td>
         <td>
         <%= form_tag(posts_search_path, method: "get") do %>
           <%= hidden_field_tag(:search, channel["channel_name"]) %>
-          <%= submit_tag("Search") %>
+          <%= submit_tag("Search" , class: "btn btn-outline-dark") %>
         <% end %>
         </td>
       </tr>
