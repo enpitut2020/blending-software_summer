@@ -22,11 +22,12 @@
         <th scope="row"><%= k %></th>
         <td><%= v["channel_name"] %></td>
         <td><%= link_to "here", v["home_url"] %></td>
+        <td><%= link_to "詳細", v["home_url"] %></td>
       </tr>
     <% end %>
   <br>
   <%= link_to "トップページ", root_path %>
-  <%= link_to "詳細", root_path %>
+
   </tbody>
 </table>
 
