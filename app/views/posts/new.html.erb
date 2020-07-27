@@ -6,5 +6,8 @@
     <%= f.text_field :search %>
     <%= f.submit "search" %>
   <% end %>
+  <% flash.each do |key,value| %>
+    <p class="text-danger"> <%= value %> </p>
+  <% end %>
 </div>
 
