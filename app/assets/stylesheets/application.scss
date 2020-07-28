@@ -1,6 +1,11 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 
+body {
+    margin: 50px 100px;
+    padding: 0;
+}
+
 .colorful span:nth-child(9) {
 	color: #999999;
 }
