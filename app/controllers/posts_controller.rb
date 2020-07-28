@@ -1,5 +1,21 @@
 class PostsController < ApplicationController
   def new
+    ret = {"edge":[[{"channel_id":"AAA","channel_name":"case1","home_url":"https://www.youtube.com/1" },{"channel_id":"BBB","channel_name":"case2","home_url":"https://www.youtube.com/2" }],[{"channel_id":"AAA","channel_name":"case1","home_url":"https://www.youtube.com/1" },{"channel_id":"CCC","channel_name":"case3","home_url":"https://www.youtube.com/3" }],[{"channel_id":"CCC","channel_name":"case3","home_url":"https://www.youtube.com/3 "},{"channel_id":"BBB","channel_name":"case2","home_url":"https://www.youtube.com/2" }],[{"channel_id":"CCC","channel_name":"case3","home_url":"https://www.youtube.com/3 "},{"channel_id":"DDD","channel_name":"case4","home_url":"https://www.youtube.com/4 "}]]}
+
+    node_seed = {}
+    edge = []
+    ret[:edge].each do |n|
+      node_seed[n[0][:channel_id]] = n[0][:channel_name]
+      node_seed[n[1][:channel_id]] = n[1][:channel_name]
+      edge.push({:from=>n[0][:channel_name], :to=>n[1][:channel_name]})
+    end
+    node = []
+    node_seed.each do |k,v|
+      node.push({:id=>k,:label=>v})
+    end
+
+    @edge = edge
+    @node = node
   end
 
   def search
