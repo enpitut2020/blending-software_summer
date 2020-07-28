@@ -17,9 +17,9 @@ class PostsController < ApplicationController
       node.push({:id=>k,:label=>v,color:'#4285F4'})
     end
 
-    @edge = edge
-    @node = node
-    @node_full = node_full_seed
+    gon.edge = edge
+    gon.node = node
+    gon.node_full = node_full_seed
   end
 
   def search
