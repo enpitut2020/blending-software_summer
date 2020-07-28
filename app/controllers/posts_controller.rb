@@ -25,6 +25,7 @@ class PostsController < ApplicationController
     id[1] = 'U'
     @youtube = "https://www.youtube.com/embed/?list=" + id
     @channel = params[:channel]
+    @channel["channel_description"] = @channel["channel_description"].gsub('"', '').gsub('\n', '<br>')
     @channel["subscriberCount"] = @channel["subscriberCount"].to_i.to_s(:delimited)
     @channel["videoCount"] = @channel["videoCount"].to_i.to_s(:delimited)
     @channel["viewCount"] = @channel["viewCount"].to_i.to_s(:delimited)

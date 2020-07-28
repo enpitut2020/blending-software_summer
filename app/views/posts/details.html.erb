@@ -1,26 +1,31 @@
-<h1><%= link_to @channel[:"channel_name"], @channel[:"home_url"] %></td>の詳細</h1>
+<h2><%= link_to @channel[:"channel_name"], @channel[:"home_url"] %></td>の詳細</h2>
+<%= image_tag @channel["h_thumbnail_url"], :size => '50x50', :alt => @channel["channel_name"]+'のサムネイル画像' %>
 
-<%= image_tag @channel["h_thumbnail_url"], :alt => @channel["channel_name"]+'のサムネイル画像' %>
-
-<p>最新動画</p>
-<iframe width="450" height="250" src=<%= @youtube %> frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<br>
-
-<p>チャンネル説明</p>
-<%= @channel["channel_description"] %>
-<br>
-
-<p>登録人数</p>
-<%= @channel["subscriberCount"] %>
-<br>
-
-<p>ビデオ数</p>
-<%= @channel["videoCount"] %>
-<br>
-
-<p>総視聴回数	</p>
-<%= @channel["viewCount"] %>
-<br>
+<% "<h1> hello </h1>"%>
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">最新動画</th>
+      <td><iframe width="450" height="250" src=<%= @youtube %> frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+    </tr>
+    <tr>
+    <th scope="col">チャンネル説明</th>
+    <td><%= @channel["channel_description"].html_safe %></td>
+    </tr>
+    <tr>
+    <th scope="col">登録人数</th>
+    <td><%= @channel["subscriberCount"] %></td>
+    </tr>
+    <tr>
+    <th scope="col">ビデオ数</th>
+    <td><%= @channel["videoCount"] %></td>
+    </tr>
+    <tr>
+    <th scope="col">総視聴回数</th>
+    <td><%= @channel["viewCount"] %></td>
+    </tr>
+  </thead>
+</table>
 
 <p>Twitter</p>
 <a class="twitter-timeline" data-width="220" data-height="400" data-theme="light" href="https://twitter.com/Otojya?ref_src=twsrc%5Etfw">Tweets by Otojya</a>
