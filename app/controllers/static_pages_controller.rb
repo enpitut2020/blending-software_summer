@@ -10,7 +10,6 @@ class StaticPagesController < ApplicationController
     node_full_seed = {}
     edge = []
     ret["edge"].each do |n|
-      degree[n[0]["channel_id"]] += 1
       node_seed[n[0]["channel_id"]] = n[0]["channel_name"]
       node_seed[n[1]["channel_id"]] = n[1]["channel_name"]
       node_full_seed[n[0]["channel_id"]] = n[0]
@@ -19,7 +18,7 @@ class StaticPagesController < ApplicationController
     end
     node = []
     node_seed.each do |k, v|
-        node.push({:id => k, :label => v, color: '#4285F4'})
+      node.push({:id => k, :label => v, color: '#4285F4'})
     end
 
     gon.edge = edge
