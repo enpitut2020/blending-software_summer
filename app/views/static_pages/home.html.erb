@@ -1,13 +1,36 @@
-<h1>Youtuber-Search</h1>
-<input type="search" name="search" placeholder="">
-<input type="submit" name="submit" value="検索">
-<h3>アプリ概要</h3>
-<p>YouTubeのチャンネル名を検索するとそれに類似したチャンネルを表示します．<p>
-<br>
-<h2>今人気のyoutuber::HikakinTVのコラボチャンネル</h2>
-<!-- <h3>コラボチャンネル</h3> -->
-<p>ユーチューバー草彅チャンネル</p>
-<p>パオパオチャンネル</p>
-<p>はじめしゃちょー(hajime)</p>
-<p>桐崎栄二. きりざきえいじ</p>
-<p>Fischer's-フィッシャーズ-</p>
+<h1>関係グラフ</h1>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+<div id="network"></div>
+<script>
+    var nodes = new vis.DataSet(gon.node);
+    var edges = new vis.DataSet(gon.edge);
+    // var nodes = new vis.DataSet([
+    //     {id: 1, label: 'A'},
+    //     {id: 2, label: 'B'},
+    //     {id: 3, label: 'C'},
+    //     {id: 4, label: 'D'},
+    //     {id: 5, label: 'E'},
+    //     {id: 6, label: 'F'},
+    //     {id: 7, label: 'G'},
+    //     {id: 8, label: 'H'},
+    // ]);
+    // var edges = new vis.DataSet([
+    //     {from: 1, to: 2, arrows: 'to'},
+    //     {from: 1, to: 3, arrows: 'to'},
+    //     {from: 3, to: 4, arrows: 'to'},
+    //     {from: 6, to: 1, arrows: 'to'},
+    //     {from: 7, to: 8, arrows: 'to'},
+    //     {from: 8, to: 7, arrows: 'to'},
+    // ]);
+    var container = document.getElementById('network');
+    var data = {nodes: nodes, edges: edges};
+    var options = {};
+    var network = new vis.Network(container, data, options);
+
+    // network.on("click", function (params) {
+    //     var nodeId = params.nodes[0];
+    //     var node = nodes.get(nodeId);
+    //     alert(gon.node_full[nodeId]);
+    // });
+</script>

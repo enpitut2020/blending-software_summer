@@ -1,3 +1,6 @@
+<%= link_to "関係グラフを表示", static_pages_home_path %>
+
+
 <div class="container">
   <h1 class="colorful">
     YouTuber-Search
@@ -18,19 +21,8 @@
     <% flash.each do |key, value| %>
       <p class="text-danger"> <%= value %> </p>
     <% end %>
-  </div>
+  </div>t
 </div>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
-<div id="network"></div>
-<script>
-    var nodes = new vis.DataSet(gon.node);
-    var edges = new vis.DataSet(gon.edge);
-    var container = document.getElementById('network');
-    var data = {nodes: nodes, edges: edges};
-    var options = {};
-    var network = new vis.Network(container, data, options);
-</script>
 
 <script src="https://code.jquery.com/jquery-1.12.4.js" type="text/javascript"></script>
 <script src="assets/application.js" type="text/javascript"></script>
