@@ -1,47 +1,6 @@
-<style>
-  .colorful span:nth-child(9) {
-    color: #999999;
-  }
-
-  .colorful span:nth-child(10) {
-    color: #4285F4;
-  }
-
-  .colorful span:nth-child(11) {
-    color: #EA4335;
-  }
-
-  .colorful span:nth-child(12) {
-    color: #FBBC05;
-  }
-
-  .colorful span:nth-child(13) {
-    color: #4285F4;
-  }
-
-  .colorful span:nth-child(14) {
-    color: #34A853;
-  }
-
-  .colorful span:nth-child(15) {
-    color: #EA4335;
-  }
-
-  h1 {
-    font-size: 3.5em;
-    letter-spacing: -2px;
-    margin-bottom: 30px;
-    text-align: center;
-  }
-
-  div {
-    text-align: center;
-  }
-
-  body {
-    padding-top: 180px;
-  }
-</style>
+<% content_for :css do %>
+  <%= stylesheet_link_tag 'new' %>
+<% end %>
 
 <h1 class="colorful">
   YouTuber-Search
