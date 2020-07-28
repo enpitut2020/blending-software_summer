@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   end
 
   def result
-    @input = params[:search]
+    # @input = params[:search]
 
     # SQLを実行するためにはサニタイズが必要
 
