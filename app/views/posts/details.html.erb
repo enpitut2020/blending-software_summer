@@ -1,15 +1,41 @@
-<h1>details page</h1>
+<h2><%= link_to @channel[:"channel_name"].gsub("'",""), @channel[:"home_url"] %></td>の詳細</h2>
+<%= image_tag @channel["h_thumbnail_url"], :size => '50x50', :alt => @channel["channel_name"]+'のサムネイル画像' %>
 
-<p>最新動画</p>
-<iframe width="450" height="250" src=<%= @youtube %> frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<% "<h1> hello </h1>"%>
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">最新動画</th>
+      <td><iframe width="450" height="250" src=<%= @youtube %> frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+    </tr>
+    <tr>
+    <th scope="col">チャンネル説明</th>
+    <td><%= @channel["channel_description"].html_safe.gsub("'","") %></td>
+    </tr>
+    <tr>
+    <th scope="col">登録人数</th>
+    <td><%= @channel["subscriberCount"] %></td>
+    </tr>
+    <tr>
+    <th scope="col">ビデオ数</th>
+    <td><%= @channel["videoCount"] %></td>
+    </tr>
+    <tr>
+    <th scope="col">総視聴回数</th>
+    <td><%= @channel["viewCount"] %></td>
+    </tr>
+  </thead>
+</table>
 
-<p>登録人数</p>
-
-<p>Twitter</p>
+<%# <p>Twitter</p>
 <a class="twitter-timeline" data-width="220" data-height="400" data-theme="light" href="https://twitter.com/Otojya?ref_src=twsrc%5Etfw">Tweets by Otojya</a>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> %>
 
-<p>Twitch</p>
+
+<%= link_to "トップページに戻る", root_path %>
+
+
+<%# <p>Twitch</p>
 <!-- Add a placeholder for the Twitch embed -->
 <div id="twitch-embed"></div>
 <!-- Load the Twitch embed script -->
@@ -20,5 +46,4 @@
     channel: "go_tsukishima"
   });
 </script>
-
-<p>ニコニコ</p>
+<p>ニコニコ</p> %>
