@@ -10,11 +10,11 @@ class PostsController < ApplicationController
       node_seed[n[1][:channel_id]] = n[1][:channel_name]
       node_full_seed[n[0][:channel_id]] = n[0]
       node_full_seed[n[1][:channel_id]] = n[1]
-      edge.push({:from=>n[0][:channel_name], :to=>n[1][:channel_name]})
+      edge.push({:from=>n[0][:channel_id], :to=>n[1][:channel_id]})
     end
     node = []
     node_seed.each do |k,v|
-      node.push({:id=>k,:label=>v})
+      node.push({:id=>k,:label=>v,color:'#4285F4'})
     end
 
     @edge = edge
