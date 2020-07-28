@@ -1,38 +1,26 @@
-<% content_for :css do %>
-  <%= stylesheet_link_tag 'new' %>
-<% end %>
-
-<%= link_to "関係グラフを表示 (重い)", static_pages_home_path %>
-
-<h1 class="colorful">
-  YouTuber-Search
+<%= link_to "関係グラフを表示", static_pages_home_path %>
+<div class="container">
+  <h1 class="colorful">
+    YouTuber-Search
   </h1>
 
-<div id="input-search">
-  <%= form_with(url: posts_search_path, method: :get, local: true) do |f| %>
+  <div id="input-search">
+    <%= form_with(url: posts_search_path, method: :get, local: true) do |f| %>
       <%= f.text_field :search, size: "55:10" %><br><br>
-    <%= f.submit " Search ", class: "btn  btn-outline-secondary mb-2" %>
-    &ensp;
-    <%= f.submit " I'm Feeling Lucky", class: "btn  btn-outline-secondary mb-2" %>
+      <%= f.submit " Search ", class: "btn  btn-outline-secondary mb-2" %>
+      &ensp;
+      <%= f.submit " I'm Feeling Lucky", class: "btn  btn-outline-secondary mb-2" %>
     <% end %>
 
-  <!--<h3>アプリ概要</h3>-->
-  <!--<p>YouTubeのチャンネル名を検索するとそれに類似したチャンネルを表示します．-->
-  <!--<p>-->
+    <!--<h3>アプリ概要</h3>-->
+    <!--<p>YouTubeのチャンネル名を検索するとそれに類似したチャンネルを表示します．-->
+    <!--<p>-->
 
-
-  <% flash.each do |key, value| %>
-  <p class="text-danger"> <%= value %> </p>
-  <% end %>
+    <% flash.each do |key, value| %>
+      <p class="text-danger"> <%= value %> </p>
+    <% end %>
+  </div>
 </div>
 
 <script src="https://code.jquery.com/jquery-1.12.4.js" type="text/javascript"></script>
-<script type="text/javascript">
-    $(".colorful").children().addBack().contents().each(function () {
-        if (this.nodeType == 3) {
-            var $this = $(this);
-            $this.replaceWith($this.text().replace(/(\S)/g, "<span>$&</span>"));
-        }
-    });
-</script>
-
+<script src="assets/application.js" type="text/javascript"></script>
