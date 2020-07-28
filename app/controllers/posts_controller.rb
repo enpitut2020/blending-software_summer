@@ -21,9 +21,13 @@ class PostsController < ApplicationController
   end
 
   def details
-    id = params[:id]
+    id = params[:channel]["channel_id"]
     id[1] = 'U'
-    @youtube = "https://www.youtube.com/embed/?list=" + params[:id]
+    @youtube = "https://www.youtube.com/embed/?list=" + id
+    @channel = params[:channel]
+    @channel["subscriberCount"] = @channel["subscriberCount"].to_i.to_s(:delimited)
+    @channel["videoCount"] = @channel["videoCount"].to_i.to_s(:delimited)
+    @channel["viewCount"] = @channel["viewCount"].to_i.to_s(:delimited)
   end
 
 end
