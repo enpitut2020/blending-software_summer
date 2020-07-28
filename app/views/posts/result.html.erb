@@ -1,4 +1,4 @@
-<h2>今人気のyoutuber::<%= @input %>のコラボチャンネル</h2>
+<h2>今人気のyoutuber::<%= @return["channel_name_used_for_search"].gsub("'","") %>のコラボチャンネル</h2>
 
 <table class="table table-striped">
   <thead class="thead-dark">
@@ -15,10 +15,10 @@
         <!-- <td scope="row"><%= index+1 %></td> -->
         <td><%= image_tag channel["thumbnail_url"], :alt => channel["channel_name"]+'のサムネイル画像' %></td>
         <td><%= link_to channel["channel_name"], channel["home_url"] %></td>
-        <td><%= link_to "詳細", posts_details_path(id:channel["channel_id"]) %></td>
+        <td><%= link_to "詳細", posts_details_path(channel:channel) %></td>
         <td>
         <%= form_tag(posts_search_path, method: "get") do %>
-          <%= hidden_field_tag(:search, channel["channel_name"]) %>
+          <%= hidden_field_tag(:search, channel["channel_name"].gsub("'","")) %>
           <%= submit_tag("Search" , class: "btn btn-outline-dark") %>
         <% end %>
         </td>
