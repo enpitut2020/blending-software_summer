@@ -1,13 +1,6 @@
-<h1>Youtuber-Search</h1>
-<input type="search" name="search" placeholder="">
-<input type="submit" name="submit" value="検索">
-<h3>アプリ概要</h3>
-<p>YouTubeのチャンネル名を検索するとそれに類似したチャンネルを表示します．<p>
-<br>
-<h2>今人気のyoutuber::HikakinTVのコラボチャンネル</h2>
-<!-- <h3>コラボチャンネル</h3> -->
-<p>ユーチューバー草彅チャンネル</p>
-<p>パオパオチャンネル</p>
-<p>はじめしゃちょー(hajime)</p>
-<p>桐崎栄二. きりざきえいじ</p>
-<p>Fischer's-フィッシャーズ-</p>
+<h1>関係グラフ</h1>
+
+<div id="network"></div>
+<%= link_to "トップページに戻る", root_path %>
+
+<%= javascript_pack_tag 'network' %>

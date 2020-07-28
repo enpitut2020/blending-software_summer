@@ -1,3 +1,4 @@
+import $ from 'jquery';
 
 $(".colorful").children().addBack().contents().each(function () {
   if (this.nodeType == 3) {
