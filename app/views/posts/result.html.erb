@@ -13,8 +13,8 @@
     <% @return["ans"].each_with_index do |channel, index| %>
       <tr>
         <!-- <td scope="row"><%= index+1 %></td> -->
-        <td><%= image_tag channel["thumbnail_url"], :alt => channel["channel_name"]+'のサムネイル画像' %></td>
-        <td><%= link_to channel["channel_name"], channel["home_url"] %></td>
+        <td><%= image_tag channel["thumbnail_url"], :alt => channel["channel_name"].gsub("'","") + 'のサムネイル画像' %></td>
+        <td><%= link_to channel["channel_name"].gsub("'",""), channel["home_url"] %></td>
         <td><%= link_to "詳細", posts_details_path(channel:channel) %></td>
         <td>
         <%= form_tag(posts_search_path, method: "get") do %>
