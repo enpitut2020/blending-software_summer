@@ -1,6 +1,3 @@
-//= require jquery3
-//= require popper
-//= require bootstrap-sprockets
 
 $(".colorful").children().addBack().contents().each(function () {
   if (this.nodeType == 3) {
