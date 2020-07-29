@@ -4,8 +4,11 @@
     <title>YouTuber-Search</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= favicon_link_tag('favicon.ico') %>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <!-- favicon_pack_tag -->
+    <%= favicon_link_tag(resolve_path_to_image('favicon.ico')) %>
+
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= yield :css %>
     <%= include_gon %>
 
