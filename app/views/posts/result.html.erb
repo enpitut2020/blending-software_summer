@@ -1,7 +1,7 @@
 <h2 class="result">
   <%= image_tag @return["channel_info_used_for_search"]["thumbnail_url"], :alt => @return["channel_info_used_for_search"]["channel_name"].gsub("'","") + 'のサムネイル画像', :size => '50x50' %>
   &nbsp;
-  <%= link_to @return["channel_info_used_for_search"]["channel_name"].gsub("'",""), @return["channel_info_used_for_search"]["home_url"], style: "color:#EA4335;" %>
+  <%= link_to @return["channel_info_used_for_search"]["channel_name"].gsub("'",""), @return["channel_info_used_for_search"]["home_url"], style: "color:#EA4335;", class: "tytle_link_class"%>
   <font size="5">の類似チャンネル</font>
 </h2>
 
@@ -19,8 +19,8 @@
       <tr>
         <!-- <td scope="row"><%= index+1 %></td> -->
         <td><%= image_tag channel["thumbnail_url"], :alt => channel["channel_name"].gsub("'","") + 'のサムネイル画像' %></td>
-        <td><%= link_to channel["channel_name"].gsub("'",""), channel["home_url"] %></td>
-        <td><%= link_to "詳細", posts_details_path(channel:channel) %></td>
+        <td><%= link_to channel["channel_name"].gsub("'",""), channel["home_url"], class: "link_class"%></td>
+        <td><%= link_to "詳細", posts_details_path(channel:channel) , class: "link_class"%></td>
         <td>
         <%= form_tag(posts_search_path, method: "get") do %>
           <%= hidden_field_tag(:search, channel["channel_name"].gsub("'","")) %>
@@ -32,4 +32,4 @@
   <br>
   </tbody>
 </table>
-<%= link_to "トップページに戻る", root_path %>
+<%= link_to "トップページに戻る", root_path%>

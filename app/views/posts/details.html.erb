@@ -1,7 +1,7 @@
 <h2 class="result">
   <%= image_tag @channel["h_thumbnail_url"], :size => '50x50', :alt => @channel["channel_name"]+'のサムネイル画像' %>
   &nbsp;
-  <%= link_to @channel[:"channel_name"].gsub("'",""), @channel[:"home_url"], style: "color:#EA4335;"%>
+  <%= link_to @channel[:"channel_name"].gsub("'",""), @channel[:"home_url"], style: "color:#EA4335;", class: "tytle_link_class" %>
   <font size="5">の詳細</font>
 </h2>
 <br>
@@ -37,7 +37,7 @@
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> %>
 
 
-<%= link_to "トップページに戻る", root_path, data: {"turbolinks" => false}  %>
+<%= link_to "トップページに戻る", root_path %>
 
 
 <%# <p>Twitch</p>
