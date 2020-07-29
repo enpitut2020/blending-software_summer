@@ -1,7 +1,12 @@
+<script data-pace-options='{ "elements": { "selectors": ["#network"] }}' src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
 <h2 class="result">YouTuberのネットワーク</h2>
 <br>
-<div id="network"></div>
+<div class="wrap">
+  <!-- 読み込みが完了したら表示する要素 -->
+  <div id="network"></div>
+</div>
 <br>
 <%= link_to "トップページに戻る", root_path %>
 
 <%= javascript_pack_tag 'network' %>
+
