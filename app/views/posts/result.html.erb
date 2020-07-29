@@ -1,4 +1,9 @@
-<h2>YouTuber「<%= link_to @return["channel_info_used_for_search"]["channel_name"].gsub("'",""), @return["channel_info_used_for_search"]["home_url"], class: "tytle_link_class"%>」の類似チャンネル</h2>
+<h2 class="result">
+  <%= image_tag @return["channel_info_used_for_search"]["thumbnail_url"], :alt => @return["channel_info_used_for_search"]["channel_name"].gsub("'","") + 'のサムネイル画像', :size => '50x50' %>
+  &nbsp;
+  <%= link_to @return["channel_info_used_for_search"]["channel_name"].gsub("'",""), @return["channel_info_used_for_search"]["home_url"], style: "color:#EA4335;", class: "tytle_link_class"%>
+  <font size="5">の類似チャンネル</font>
+</h2>
 
 <table class="table table-striped">
   <thead class="thead-dark">
@@ -27,4 +32,4 @@
   <br>
   </tbody>
 </table>
-<%= link_to "トップページに戻る", root_path , class: "link_class"%>
+<%= link_to "トップページに戻る", root_path%>
