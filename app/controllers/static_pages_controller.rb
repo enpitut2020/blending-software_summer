@@ -9,7 +9,10 @@ class StaticPagesController < ApplicationController
     node_seed = {}
     node_full_seed = {}
     edge = []
+    degree = Hash.new(0)
     ret["edge"].each do |n|
+      degree[n[0]["channel_id"]] += 1
+      degree[n[1]["channel_id"]] += 1
       node_seed[n[0]["channel_id"]] = n[0]["channel_name"]
       node_seed[n[1]["channel_id"]] = n[1]["channel_name"]
       node_full_seed[n[0]["channel_id"]] = n[0]
