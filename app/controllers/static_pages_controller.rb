@@ -21,7 +21,7 @@ class StaticPagesController < ApplicationController
     end
     node = []
     node_seed.each do |k, v|
-      node.push({:id => k, :label => v, color: '#4285F4'})
+      node.push({:id => k, :label => v[1..-2], shape: "circularImage", image: node_full_seed[k]["h_thumbnail_url"], value: (degree[k] + 100) * 70, color: '#FFFFFF'})
     end
 
     gon.edge = edge
