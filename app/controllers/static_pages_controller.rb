@@ -9,7 +9,10 @@ class StaticPagesController < ApplicationController
     node_seed = {}
     node_full_seed = {}
     edge = []
+    degree = Hash.new(0)
     ret["edge"].each do |n|
+      degree[n[0]["channel_id"]] += 1
+      degree[n[1]["channel_id"]] += 1
       node_seed[n[0]["channel_id"]] = n[0]["channel_name"]
       node_seed[n[1]["channel_id"]] = n[1]["channel_name"]
       node_full_seed[n[0]["channel_id"]] = n[0]
@@ -18,7 +21,7 @@ class StaticPagesController < ApplicationController
     end
     node = []
     node_seed.each do |k, v|
-      node.push({:id => k, :label => v, color: '#4285F4'})
+      node.push({:id => k, :label => v[1..-2], shape: "circularImage", image: node_full_seed[k]["h_thumbnail_url"], value: (degree[k] + 100) * 70, color: '#FFFFFF'})
     end
 
     gon.edge = edge
