@@ -1,8 +1,8 @@
 @import "~bootstrap/scss/bootstrap";
 
 body {
-    margin: 50px 100px;
-    padding: 0;
+	margin: 50px 100px;
+	padding: 0;
 }
 
 .colorful span:nth-child(-n+8) {
@@ -15,7 +15,6 @@ body {
 
 .colorful span:nth-child(n+10) {
 	color: #000000;
-	// color: #999999;
 }
 
 
@@ -34,8 +33,25 @@ body {
 #network {
 	height: 500px;
 }
+
+.result {
+	text-align: center;
+	position: relative;
+	padding-bottom: 0.5em;
+	border-bottom: 4px solid #DDD;
+}
+
+.result::after {
+	position: absolute;
+	content: " ";
+	border-bottom: solid 4px #446689;
+	bottom: -4px;
+	width: 10%;
+	display: block;
+}
+
 .link_class {
-    font-size: 150%; 
+    font-size: 140%;
     text-align: center;
     position: relative;
     display: inline-block;
@@ -63,6 +79,7 @@ body {
     position: relative;
     display: inline-block;
     transition: .3s;
+		color: #EA4335;
 }
 
 .tytle_link_class::after {
@@ -72,7 +89,7 @@ body {
     content: '';
     width: 0;
     height: 2px;
-    background-color: #31aae2;
+    background-color: #EA4335;
     transition: .3s;
     transform: translateX(-50%);
 }
