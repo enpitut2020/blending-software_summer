@@ -1,17 +1,19 @@
-<%= link_to "関係グラフを表示", static_pages_home_path %>
 
 
 <div class="container">
   <h1 class="colorful">
-    YouTuber-Search
+    YouTuber
+    <%= image_pack_tag 'favicon.ico', size: '50x50' %>
+    Search
   </h1>
 
   <div id="input-search">
     <%= form_with(url: posts_search_path, method: :get, local: true) do |f| %>
-      <%= f.text_field :search, size: "55:10" %><br><br>
-      <%= f.submit " Search ", class: "btn  btn-outline-secondary mb-2" %>
-      &ensp;
-      <%= f.submit " I'm Feeling Lucky", class: "btn  btn-outline-secondary mb-2" %>
+      <%= f.text_field :search, size: "55:10" , placeholder: "HikakinGames" %>
+      <br><br>
+      <%= f.submit " Search ", class: "btn  btn-outline-secondary mb-2"%>
+      <!-- &#38;ensp; -->
+      <!-- <%= f.submit " I'm Feeling Lucky", class: "btn  btn&#45;outline&#45;secondary mb&#45;2" %> -->
     <% end %>
 
     <!--<h3>アプリ概要</h3>-->
@@ -21,6 +23,9 @@
     <% flash.each do |key, value| %>
       <p class="text-danger"> <%= value %> </p>
     <% end %>
+
+    <br><br>
+    <%= link_to "YouTuberの関係性をネットワークで表示", static_pages_home_path , style: "color:#000080;"%>
   </div>
 </div>
 
