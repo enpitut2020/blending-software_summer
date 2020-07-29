@@ -1,5 +1,10 @@
-<h2><%= link_to @channel[:"channel_name"].gsub("'",""), @channel[:"home_url"] %></td>の詳細</h2>
-<%= image_tag @channel["h_thumbnail_url"], :size => '50x50', :alt => @channel["channel_name"]+'のサムネイル画像' %>
+<h2 class="result">
+  <%= image_tag @channel["h_thumbnail_url"], :size => '50x50', :alt => @channel["channel_name"]+'のサムネイル画像' %>
+  &nbsp;
+  <%= link_to @channel[:"channel_name"].gsub("'",""), @channel[:"home_url"], style: "color:#EA4335;"%>
+  <font size="5">の詳細</font>
+</h2>
+<br>
 
 <% "<h1> hello </h1>"%>
 <table class="table table-striped">

@@ -1,8 +1,8 @@
 @import "~bootstrap/scss/bootstrap";
 
 body {
-    margin: 50px 100px;
-    padding: 0;
+	margin: 50px 100px;
+	padding: 0;
 }
 
 .colorful span:nth-child(-n+8) {
@@ -15,7 +15,6 @@ body {
 
 .colorful span:nth-child(n+10) {
 	color: #000000;
-	// color: #999999;
 }
 
 
@@ -33,4 +32,19 @@ body {
 
 #network {
 	height: 500px;
+}
+
+.result {
+	position: relative;
+	padding-bottom: 0.5em;
+	border-bottom: 4px solid #DDD;
+}
+
+.result::after {
+	position: absolute;
+	content: " ";
+	border-bottom: solid 4px #446689;
+	bottom: -4px;
+	width: 10%;
+	display: block;
 }
